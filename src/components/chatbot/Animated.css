@@ -1,0 +1,146 @@
+.app {
+    position: relative;
+    height: 100vh;
+  }
+  .chat-icon {
+    color: #fff; 
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    pointer-events: none;
+
+  }
+  .animated-container {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    
+    position: fixed;
+    top: 95%;
+    right: 20px;
+    transform: translateY(-100%);
+    z-index: 995;
+
+    
+    
+  }
+  .close-button {
+    position: absolute;
+    top: -50px;
+    
+    width: 30px;
+    height: 30px;
+    background-color: #db343c;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .close-icon {
+    color: #fff; 
+    position: absolute;
+    font-size: 20px;
+    top: 52%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+    
+  }
+  .close-icon:hover {
+    font-size: 35px;
+  }
+  
+  
+  .open .close-button {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 1s;
+    
+  }
+  .pulse{
+    
+    animation: animate-pulse 3s linear infinite;
+    cursor: pointer
+}
+@keyframes animate-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7), 0 0 0 0 rgba(134, 142, 255, 0.7);
+    }
+    40% {
+      box-shadow: 0 0 0 20px rgba(37, 34, 189, 0), 0 0 0 0 rgba(74, 101, 255, 0.7);
+    }
+    80% {
+      box-shadow: 0 0 0 20px rgba(37, 11, 182, 0), 0 0 0 10px rgba(74, 86, 255, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(74, 86, 255, 0), 0 0 0 10px rgba(92, 74, 255, 0);
+    }
+  }
+
+  
+
+  
+  @keyframes transformAnimation {
+    50% {
+      width: 300px;
+      height: 4px;
+      border-radius: 5px;
+    }
+    100% {
+      width: 310px;
+      height: 510px;
+      border-radius: 5px;
+      
+  
+      
+    }
+  }
+ 
+  
+  .animated-container.open {
+    animation: transformAnimation 1s ease forwards;
+  }
+  @media (max-width: 768px) {
+    @keyframes transformAnimation {
+      50% {
+        width: 300px;
+        height: 4px;
+        border-radius: 5px;
+      }
+      100% {
+        width: 310px; 
+        height: 510px; 
+        border-radius: 5px;
+        
+        
+        
+      }
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @keyframes transformAnimation {
+      50% {
+        width: 300px;
+        height: 4px;
+        border-radius: 5px;
+      }
+      100% {
+        width: 310px; 
+        height: 510px; 
+        border-radius: 5px;
+        top: 92%;
+        
+        
+        
+        
+      }
+    }
+  }
